@@ -19,15 +19,18 @@ const slides = [
 
 
 currentslideindex = 0;
+let arraydot = [];
+
+/** **/
 let left = document.querySelector("#banner #left");
 let right = document.querySelector("#banner #right");
+/** **/
 let slidepic =document.querySelector("#banner .banner-img");
 let textdescrip = document.querySelector("#banner p");
 /**Def des variable init **/
 slidepic.src = `/assets/images/slideshow/${slides[currentslideindex].image}`;
 textdescrip.innerHTML = slides[currentslideindex].tagLine;
 /**variable pour crée un tableau du nb de dot**/
-let arraydot = [];
 
 
 /**On ajoute un element p avec la class dot pour chaque élément de notre tableau **/
@@ -36,6 +39,8 @@ slides.forEach(slides => {
  	adddots.classList.add("dot");
 	document.querySelector("#banner .dots").append(adddots);
 	arraydot.push(adddots);	
+	arraydot[currentslideindex].classList.add("dot_selected");
+
 });
 
 
