@@ -18,7 +18,7 @@ const slides = [
 ]
 
 
-currentslideindex = 0;
+let currentslideindex = 0;
 let arraydot = [];
 
 /** **/
@@ -45,27 +45,39 @@ slides.forEach(slides => {
 
 
 /** fLÉCHE GAUCHE **/
-left.addEventListener("click",function(){
-	currentslideindex=(currentslideindex - 1 + slides.length)% slides.length;
+// left.addEventListener("click",function(){
+// 	currentslideindex=(currentslideindex - 1 + slides.length)% slides.length;
+// 	arraydot.forEach(dot => dot.classList.remove("dot_selected"));
+// 	arraydot[currentslideindex].classList.add("dot_selected");
+// 	slidepic.src = `/assets/images/slideshow/${slides[currentslideindex].image}`;
+// 	textdescrip.innerHTML = slides[currentslideindex].tagLine;
+// 	console.log(currentslideindex)
+// });
+
+
+// /**FLECHE DROITE */
+// right.addEventListener("click",function(){
+// 	currentslideindex=(currentslideindex + 1 + slides.length)% slides.length;
+// 	arraydot.forEach(dot => dot.classList.remove("dot_selected"));
+// 	arraydot[currentslideindex].classList.add("dot_selected");
+// 	slidepic.src = `/assets/images/slideshow/${slides[currentslideindex].image}`;
+// 	textdescrip.innerHTML = slides[currentslideindex].tagLine;
+// 	console.log(currentslideindex)
+// });
+
+
+document.querySelectorAll("#right, #left").forEach(arrow => arrow.addEventListener("click", function() {
+	if (arrow.id === "right") {
+	  currentslideindex=(currentslideindex+1) % slides.length;
+	} else if (arrow.id === "left") {
+	  currentslideindex=(currentslideindex-1 + slides.length ) % slides.length;
+	}
 	arraydot.forEach(dot => dot.classList.remove("dot_selected"));
 	arraydot[currentslideindex].classList.add("dot_selected");
 	slidepic.src = `/assets/images/slideshow/${slides[currentslideindex].image}`;
 	textdescrip.innerHTML = slides[currentslideindex].tagLine;
 	console.log(currentslideindex)
-});
-
-
-/**FLECHE DROITE */
-right.addEventListener("click",function(){
-	currentslideindex=(currentslideindex + 1 + slides.length)% slides.length;
-	arraydot.forEach(dot => dot.classList.remove("dot_selected"));
-	arraydot[currentslideindex].classList.add("dot_selected");
-	slidepic.src = `/assets/images/slideshow/${slides[currentslideindex].image}`;
-	textdescrip.innerHTML = slides[currentslideindex].tagLine;
-	console.log(currentslideindex)
-});
-
-
+  }));
 
 
 
