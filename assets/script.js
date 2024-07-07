@@ -28,7 +28,7 @@ let right = document.querySelector("#banner #right");
 let slidepic =document.querySelector("#banner .banner-img");
 let textdescrip = document.querySelector("#banner p");
 /**Def des variable init **/
-slidepic.src = `/assets/images/slideshow/${slides[currentslideindex].image}`;
+slidepic.src = `./assets/images/slideshow/${slides[currentslideindex].image}`;
 textdescrip.innerHTML = slides[currentslideindex].tagLine;
 /**variable pour crée un tableau du nb de dot**/
 
