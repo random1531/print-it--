@@ -54,7 +54,7 @@ document.querySelectorAll("#right, #left").forEach(arrow => arrow.addEventListen
 	}
 	arraydot.forEach(dot => dot.classList.remove("dot_selected"));
 	arraydot[currentslideindex].classList.add("dot_selected");
-	slidepic.src = `/assets/images/slideshow/${slides[currentslideindex].image}`;
+	slidepic.src = `./assets/images/slideshow/${slides[currentslideindex].image}`;
 	textdescrip.innerHTML = slides[currentslideindex].tagLine;
 	console.log(currentslideindex)
   }));
